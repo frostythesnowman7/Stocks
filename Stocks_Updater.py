@@ -51,7 +51,7 @@ def closing_price(api_key, symbol):
 #    print(response.status_code)
     if response.status_code == 200:
         data = response.json()['Time Series (Daily)']
-        yesterday = list(data.keys())[1]
+        yesterday = list(data.keys())[0]
         closing_price = data[yesterday]['4. close']
         return closing_price
     else:
